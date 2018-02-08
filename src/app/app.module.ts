@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { StatusComponent } from './status/status.component';
 
 
 
@@ -16,14 +21,27 @@ import { UserComponent } from './user/user.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    ForgotPasswordComponent,
+    DashboardComponent,
+    ProfileComponent,
+    ProjectsComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      {path:'', pathMatch:'full', redirectTo:'login'}
+      {path:'', pathMatch:'full', redirectTo:'login'},
+      { path:'login',component:LoginComponent },
+      { path:'user',component:UserComponent },
+      { path:'forgotpassword',component:ForgotPasswordComponent },
+      { path:'profile',component:ProfileComponent },
+      { path:'dashboard',component:DashboardComponent },
+      { path:'projects',component:ProjectsComponent },
+      { path:'status',component:StatusComponent }
+
     ])
   ],
   providers: [],

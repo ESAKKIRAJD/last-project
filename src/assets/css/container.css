@@ -1,0 +1,37 @@
+#contentAreas{
+	background-color:white;
+}
+.login-page {
+	 background-color:#6347bc; 
+	 }
+.cd-section h4{
+	color: black;
+	font-weight: bold;
+	padding: 2%;
+}
+.card-content select{
+	width: 100%;
+    padding: 2%;
+    border-color:  gainsboro;
+}
+.card-content select:hover{
+	border:2px solid #9c27b0;
+}
+.footer a{
+	color: #9c27b0;
+	font-weight:bold;
+}
+.logo{
+	background-color: white;
+}
+.form-group:last-child{
+	margin-top: 10px;
+}
+.btn.btn-second{
+	background-color: #9c27b0;
+	color: white;
+}
+/*.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+	margin-top: 0;
+}
+.btn-group>.btn:first-child{padding:0;}*/
