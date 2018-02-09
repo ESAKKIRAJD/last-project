@@ -14,6 +14,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { StatusComponent } from './status/status.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { NewProjectsComponent } from './new-projects/new-projects.component';
+import { PaymentComponent } from './payment/payment.component';
+
+
+import { DataServiceService } from './data-service.service';
 
 
 
@@ -26,7 +32,10 @@ import { StatusComponent } from './status/status.component';
     DashboardComponent,
     ProfileComponent,
     ProjectsComponent,
-    StatusComponent
+    StatusComponent,
+    ChangePasswordComponent,
+    NewProjectsComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -40,11 +49,14 @@ import { StatusComponent } from './status/status.component';
       { path:'profile',component:ProfileComponent },
       { path:'dashboard',component:DashboardComponent },
       { path:'projects',component:ProjectsComponent },
-      { path:'status',component:StatusComponent }
+      { path:'status',component:StatusComponent },
+      { path:'changepassword',component:ChangePasswordComponent },
+      { path:'newprojects',component:NewProjectsComponent },
+      { path:'payment',component:PaymentComponent },
 
     ])
   ],
-  providers: [],
+  providers: [DataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

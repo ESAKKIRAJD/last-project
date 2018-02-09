@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import {DataServiceService} from '../data-service.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  user=[];
+
+  constructor(private loginService:DataServiceService,private router:Router) { }
 
   ngOnInit() {
   }
 
+  onLogin(value){
+    
+         this.loginService.onLogin(value).subscribe(res=>{
+           this.user=res;
+           console.log(this.user);
+    
+           this.router.navigate(['/dashboard']);
+          
+          
+         });
+    
+         }
 }

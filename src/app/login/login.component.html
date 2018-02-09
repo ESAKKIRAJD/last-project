@@ -42,16 +42,16 @@
                                                       required valid password
                                                     </div>
                                                     <div [hidden]="!Password.errors.minlength">
-                                                        Please enter valid password
+                                                        Please enter minimum 6 char
                                                     </div>
                                               </div>
                                           <span class="material-input"></span></div>
                                       </div>
                                   </div>
                                   <div class="footer text-center">
-                                      <a routerLink="/dashboard">                                        
+                                                                          
                                           <button class="btn btn-second btn-round" [disabled]="!loginForm.form.valid" type="submit" data-toggle="modal" data-target="#loginModal"> Login</button>
-                                      </a>
+                                      
                                   </div>
                                   <div class="row">
                                       <div class="col-md-8">
@@ -59,7 +59,7 @@
                                           <div class="ripple-container"></div></a>
                                       </div>
                                       <div class="col-md-4">
-                                          <a routerLink="/register" class="btn btn-primary btn-simple">REGISTER
+                                          <a routerLink="/user" class="btn btn-primary btn-simple">User
                                           <div class="ripple-container"></div></a>
                                       </div>
                                   </div>
@@ -76,7 +76,7 @@
                       <script>
                           document.write(new Date().getFullYear())
                       </script>2018
-                      <a href="http://www.creative-tim.com"> Trio Desk</a>, made with love for a better web
+                     <a href="http://www.Triodesk.com"> Trio Desk </a>, made with love for a better web
                   </p>
               </div>
           </footer>
