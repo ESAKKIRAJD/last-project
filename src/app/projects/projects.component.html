@@ -132,12 +132,12 @@
                                           </tr>
                                       </thead>
                                       <tbody>
-                                          <tr>
-                                              <td class="text-center">1</td>
-                                              <td>Andrew Mike</td>
-                                              <td>Develop</td>
-                                              <td class="text-right">2013</td>
-                                              <td class="text-right">€ 99,225</td>
+                                          <tr *ngFor="let project of projects">
+                                              <td class="text-center">{{project.slno}}</td>
+                                              <td>{{project.appname}}</td>
+                                              <td>{{project.client}}</td>
+                                              <td class="text-right">{{project.appstatus}}</td>
+                                              <td class="text-right">{{project.payment}}</td>
                                               <td class="td-actions text-right">  
                                                   <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
                                                       <i class="material-icons">edit</i>
@@ -147,66 +147,7 @@
                                                   </button>
                                               </td>
                                           </tr>
-                                          <tr>
-                                              <td class="text-center">2</td>
-                                              <td>John Doe</td>
-                                              <td>Design</td>
-                                              <td class="text-right">2012</td>
-                                              <td class="text-right">€ 89,241</td>
-                                              <td class="td-actions text-right">
-                                                  <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
-                                                      <i class="material-icons">edit</i>
-                                                  </button>
-                                                  <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
-                                                      <i class="material-icons">close</i>
-                                                  </button>
-                                              </td>
-                                          </tr>
-                                          <tr>
-                                              <td class="text-center">3</td>
-                                              <td>Alex Mike</td>
-                                              <td>Design</td>
-                                              <td class="text-right">2010</td>
-                                              <td class="text-right">€ 92,144</td>
-                                              <td class="td-actions text-right">
-                                                 <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
-                                                      <i class="material-icons">edit</i>
-                                                  </button>
-                                                  <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
-                                                      <i class="material-icons">close</i>
-                                                  </button>
-                                              </td>
-                                          </tr>
-                                          <tr>
-                                              <td class="text-center">4</td>
-                                              <td>Mike Monday</td>
-                                              <td>Marketing</td>
-                                              <td class="text-right">2013</td>
-                                              <td class="text-right">€ 49,990</td>
-                                              <td class="td-actions text-right">
-                                                  <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
-                                                      <i class="material-icons">edit</i>
-                                                  </button>
-                                                  <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
-                                                      <i class="material-icons">close</i>
-                                                  </button>
-                                              </td>
-                                          </tr>
-                                          <tr>
-                                              <td class="text-center">5</td>
-                                              <td>Paul Dickens</td>
-                                              <td>Communication</td>
-                                              <td class="text-right">2015</td>
-                                              <td class="text-right">€ 69,201</td>
-                                              <td class="td-actions text-right">
-                                                  <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
-                                                      <i class="material-icons">edit</i>
-                                                  </button>
-                                                  <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
-                                                      <i class="material-icons">close</i>
-                                                  </button>
-                                              </td>
-                                          </tr>
+                                          
                                       </tbody>
                                   </table>
                               </div>

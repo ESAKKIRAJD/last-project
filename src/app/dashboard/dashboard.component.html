@@ -94,7 +94,7 @@
                           </a>
                           <ul class="dropdown-menu">
                               <li>
-                                  <a routerLink="/profile">Profile</a>
+                                  <a routerLink="/profile">{{user.username}}</a>
                               </li>
                               <li>
                                   <a routerLink="/changepassword"> Change password</a>
@@ -207,36 +207,13 @@
                                           </tr>
                                       </thead>
                                       <tbody>
-                                          <tr>
-                                              <td class="text-center">1</td>
-                                              <td>Andrew Mike</td>
-                                              <td>Develop</td>
-                                              <td class="text-right">2013</td>
+                                          <tr *ngFor="let project of projects">
+                                              <td class="text-center">{{project.slno}}</td>
+                                              <td>{{project.appname}}</td>
+                                              <td>{{project.appstatus}}</td>
+                                              <td class="text-right">{{project.date}}</td>
                                           </tr>
-                                          <tr>
-                                              <td class="text-center">2</td>
-                                              <td>John Doe</td>
-                                              <td>Design</td>
-                                              <td class="text-right">2012</td>
-                                           </tr>
-                                          <tr>
-                                              <td class="text-center">3</td>
-                                              <td>Alex Mike</td>
-                                              <td>Design</td>
-                                              <td class="text-right">2010</td>
-                                          </tr>
-                                          <tr>
-                                              <td class="text-center">4</td>
-                                              <td>Mike Monday</td>
-                                              <td>Marketing</td>
-                                              <td class="text-right">2013</td>                   
-                                          </tr>
-                                          <tr>
-                                              <td class="text-center">5</td>
-                                              <td>Paul Dickens</td>
-                                              <td>Communication</td>
-                                              <td class="text-right">2015</td>
-                                          </tr>
+                                          
                                       </tbody>
                                   </table>
                               </div>

@@ -32,7 +32,7 @@ export class DataServiceService {
      .map(result =>this.profileUser=result.json())
   }
   getDashbord(){
-  return this.http.get('http://localhost:4000/dashbord')
+  return this.http.get('http://localhost:4000/projectlists')
   .map((dashborddetails:Response)=>dashborddetails.json())
 } 
 

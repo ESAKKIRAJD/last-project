@@ -14,7 +14,8 @@ import {ShareService} from '../share.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
+  projects=[];
+  user=[];
   
 
   constructor(private dashbordservice:DataServiceService,
@@ -22,18 +23,16 @@ export class DashboardComponent implements OnInit {
       this.user=this.profileService.getUser();
       console.log(this.user);
     }
-  dashbordDetail=[];
-  user=[];
+  
 
   ngOnInit() {
     this.dashbordservice.getDashbord()
-    .subscribe(resDashbord=>{
-      // console.log(resDashbord);
-      this.dashbordDetail=resDashbord;
+    .subscribe(res=>{
+      this.projects=res;
+      console.log(res);
+      this.profileService.setProjects(res);
     });
-    // this.profileService.getUser().subscribe(res=>{
-    //   console.log(res);
-    // })
+    
   }
 
 }
