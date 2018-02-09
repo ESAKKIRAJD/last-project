@@ -21,6 +21,7 @@ import { PaymentComponent } from './payment/payment.component';
 
 import { DataServiceService } from './data-service.service';
 import {ShareService} from './share.service';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 
@@ -36,7 +37,8 @@ import {ShareService} from './share.service';
     StatusComponent,
     ChangePasswordComponent,
     NewProjectsComponent,
-    PaymentComponent
+    PaymentComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -45,15 +47,27 @@ import {ShareService} from './share.service';
     RouterModule.forRoot([
       {path:'', pathMatch:'full', redirectTo:'login'},
       { path:'login',component:LoginComponent },
-      { path:'user',component:UserComponent },
       { path:'forgotpassword',component:ForgotPasswordComponent },
-      { path:'profile',component:ProfileComponent },
+      { path:'landing',component:LandingPageComponent,
+    children:[
+      {path:'',pathMatch:'full',redirectTo:'dashboard'},
       { path:'dashboard',component:DashboardComponent },
-      { path:'projects',component:ProjectsComponent },
+      { path:'projects',component:ProjectsComponent},
       { path:'status',component:StatusComponent },
+      { path:'payment',component:PaymentComponent},
+      { path:'user',component:UserComponent },
       { path:'changepassword',component:ChangePasswordComponent },
-      { path:'newprojects',component:NewProjectsComponent },
-      { path:'payment',component:PaymentComponent },
+      { path:'profile',component:ProfileComponent }     
+    ]},
+      // { path:'user',component:UserComponent },
+      // { path:'forgotpassword',component:ForgotPasswordComponent },
+      // { path:'profile',component:ProfileComponent },
+      // { path:'dashboard',component:DashboardComponent },
+      // { path:'projects',component:ProjectsComponent },
+      // { path:'status',component:StatusComponent },
+      // { path:'changepassword',component:ChangePasswordComponent },
+      // { path:'newprojects',component:NewProjectsComponent },
+      // { path:'payment',component:PaymentComponent },
 
     ])
   ],

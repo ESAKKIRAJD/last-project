@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
            this.user=res;
            console.log(this.user);
     
-           this.router.navigate(['/dashboard']);
+           this.router.navigate(['/landing']);
            this.shareservice.setUser(res);
           
           
