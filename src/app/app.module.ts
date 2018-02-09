@@ -20,6 +20,7 @@ import { PaymentComponent } from './payment/payment.component';
 
 
 import { DataServiceService } from './data-service.service';
+import {ShareService} from './share.service';
 
 
 
@@ -56,7 +57,8 @@ import { DataServiceService } from './data-service.service';
 
     ])
   ],
-  providers: [DataServiceService],
+  providers: [DataServiceService,
+              ShareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
