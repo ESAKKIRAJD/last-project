@@ -13,6 +13,7 @@ export class DataServiceService {
   dashborddetails:any;
   regUser:any;
   updateDetails:any;
+  createdDetails:any;
    
 
   constructor(private http:Http) { }
@@ -53,5 +54,11 @@ onUpdate(value){
 return this.http.post('http://localhost:4000/projectupdate',value)
 .map((updateDetails:Response)=>updateDetails.json())
 }
+//add new projects
+onNewprojects(value){
+  return this.http.post('http://localhost:4000/',value)
+  .map((createdDetails:Response)=>createdDetails.json())
+   }
+
 
 }

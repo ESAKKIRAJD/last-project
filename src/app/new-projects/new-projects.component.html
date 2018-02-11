@@ -2,39 +2,52 @@
           <div class="container-fluid">
               <div class="col-md-12">
                       <div class="card">
-                          <form method="get" action="/" class="form-horizontal">
+                          <form method="get" action="/" class="form-horizontal" #newprojectsForm="ngForm" (ngSubmit)='onNewprojects(newprojectsForm.value)'   novalidate>
                               <div class="card-header card-header-text">
                                   <h4 class="card-title">Add new projects</h4>
                               </div>
                               <div class="card-content">
-                                  <div class="row">
+                                  <!-- <div class="row">
                                       <label class="col-sm-2 label-on-left">Project Name</label>
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <select>
-                                                  <option>project 1</option>
-                                                  <option>project 2</option>
-                                                  <option>project 3</option>
+                                              <select class="form-control" name="projects" #Projects="ngModel" required ngModel>
+                                                  <option value="projects">projects</option>
+                                                  <option value="project 1">project 1</option>
+                                                  <option value="project 2">project 2</option>
+                                                  <option value="project 3">project 3</option>
                                               </select>
                                           <span class="material-input"></span>
                                           </div>
                                       </div>
-                                  </div>
+                                  </div> -->
+                                  <div class="row">
+                                        <label class="col-sm-2 label-on-left">Project Name</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <input class="form-control" name="projects" #Projects="ngModel" required ngModel>
+                                                    
+                                            <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
                                   <div class="row">
                                       <label class="col-sm-2 label-on-left">Client</label>
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <select>
-                                                  <option>client 1</option>
-                                                  <option>client 2</option>
-                                                  <option>client 3</option>
+                                              <select class="form-control" name="clients" #Clients="ngModel" required ngModel>
+                                                  <option value="clients">clients</option>
+                                                  <option value="client 1">client 1</option>
+                                                  <option value="client 2">client 2</option>
+                                                  <option value="client 3">client 3</option>
                                               </select>
                                               <br>
                                               <br>
                                               <p>or add client below</p>
-                                              <input type="text" class="form-control" value="">
+                                              <input type="text" class="form-control" value="" name="addclient" #Add Client="ngModel" required ngModel>
                                           <span class="material-input"></span></div>
                                       </div>
                                   </div>
@@ -43,7 +56,7 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <input type="text" class="form-control" value="">
+                                              <input type="text" class="form-control" value="" name="time" #Time="ngModel" required ngModel>
                                           <span class="material-input"></span></div>
                                       </div>
                                   </div>
@@ -51,7 +64,7 @@
                                       <label class="col-sm-2 label-on-left">Start Date</label>
                                       <div class="col-sm-10">
                                           <div class="form-group">
-                                              <input type="date" class="form-control datepicker" value="10/05/2016">
+                                              <input type="date" class="form-control datepicker" value="10/05/2016" name="Start Date" #start date="ngModel" required ngModel>
                                               <span class="material-input"></span>
                                           </div>
                                       </div>
@@ -61,16 +74,24 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <input type="text-area" rows="10" cols="40" class="form-control">
+                                              <input type="text-area" rows="10" cols="40" class="form-control" name="description" #Description="ngModel" required ngModel>
                                           <span class="material-input"></span></div>
                                       </div>
                                   </div>
                                   <div class="row">
                                       <div class="col-md-4 col-md-offset-1">
-                                          <a routerLink="/landing/projects"><button class="btn btn-primary">Create<div class="ripple-container"></div></button></a>
+                                          <!-- <a routerLink="/landing/projects"> -->
+                                            <input type="submit" value="CREATE"  class="btn btn-primary" [disabled]="!newprojectsForm.form.valid"  data-toggle="modal">
+                                                <div class="ripple-container"></div>
+                                            
+                                        <!-- </a>                                         -->
                                       </div>
                                       <div class="col-md-4 col-md-offset-1">
-                                          <a routerLink="/projects"><button class="btn btn-primary">Cancel<div class="ripple-container"></div></button></a>
+                                        <!-- <a routerLink="/landing/projects"> -->
+                                            <button class="btn btn-primary">Cancel
+                                                <div class="ripple-container"></div>
+                                            </button>
+                                        <!-- </a> -->
                                       </div>
                                   </div>
                               </div>
