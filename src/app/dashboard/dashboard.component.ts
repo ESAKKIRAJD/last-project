@@ -20,17 +20,16 @@ export class DashboardComponent implements OnInit {
 
   constructor(private dashbordservice:DataServiceService,
     private profileService:ShareService) { 
-      this.user=this.profileService.getUser();
-      console.log(this.user);
+      
     }
   
 
   ngOnInit() {
-    this.dashbordservice.getDashbord()
+    this.dashbordservice.getProjects()
     .subscribe(res=>{
       this.projects=res;
       console.log(res);
-      this.profileService.setProjects(res);
+      // this.profileService.setProjects(res);
     });
     
   }

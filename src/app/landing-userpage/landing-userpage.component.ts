@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import {ShareService} from '../share.service';
 
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.css']
+  selector: 'app-landing-userpage',
+  templateUrl: './landing-userpage.component.html',
+  styleUrls: ['./landing-userpage.component.css']
 })
-export class LandingPageComponent implements OnInit {
+export class LandingUserpageComponent implements OnInit {
 
   user=[];
 

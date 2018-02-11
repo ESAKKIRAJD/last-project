@@ -11,6 +11,8 @@ export class DataServiceService {
   forgotUser:any;
   profileUser:any;
   dashborddetails:any;
+  regUser:any;
+  updateDetails:any;
    
 
   constructor(private http:Http) { }
@@ -31,9 +33,25 @@ export class DataServiceService {
      return this.http.post('http://localhost:4000/updateprofile',value)
      .map(result =>this.profileUser=result.json())
   }
-  getDashbord(){
+  getProjects(){
+    
   return this.http.get('http://localhost:4000/projectlists')
   .map((dashborddetails:Response)=>dashborddetails.json())
 } 
+
+// add user
+
+addUser(value){ 
+  console.log(this.regUser);
+  return this.http.post('http://localhost:4000/adduser',value)
+  .map(result=>this.regUser=result.json())
+  
+
+}
+//status update
+onUpdate(value){
+return this.http.post('http://localhost:4000/projectupdate',value)
+.map((updateDetails:Response)=>updateDetails.json())
+}
 
 }

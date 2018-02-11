@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {ShareService} from '../share.service';
+
+import {DataServiceService} from '../data-service.service';
 
 @Component({
   selector: 'app-status',
@@ -11,10 +12,19 @@ export class StatusComponent implements OnInit {
 
   projects=[];
 
-  constructor( private shareservice:ShareService) { }
+  constructor( private statusService:DataServiceService) { }
 
   ngOnInit() {
-    this.projects=this.shareservice.getProjects();
-  }
+    this.statusService.getProjects()
+    .subscribe(res=>{
+      this.projects=res;
+  })
+}
+onUpdate(value){
+  console.log(value);
+  this.statusService.onUpdate(value).subscribe(res=>{
+    console.log(res);
+  })
+}
 
 }

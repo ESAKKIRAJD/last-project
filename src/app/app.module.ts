@@ -22,6 +22,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { DataServiceService } from './data-service.service';
 import {ShareService} from './share.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LandingUserpageComponent } from './landing-userpage/landing-userpage.component';
 
 
 
@@ -38,7 +39,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ChangePasswordComponent,
     NewProjectsComponent,
     PaymentComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    LandingUserpageComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,14 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
       {path:'', pathMatch:'full', redirectTo:'login'},
       { path:'login',component:LoginComponent },
       { path:'forgotpassword',component:ForgotPasswordComponent },
+      { path:'userlanding',component:LandingUserpageComponent,
+    children:[
+      {path:'',pathMatch:'full',redirectTo:'dashboard'},
+      { path:'dashboard',component:DashboardComponent },
+      { path:'status',component:StatusComponent },
+      { path:'changepassword',component:ChangePasswordComponent },
+      { path:'profile',component:ProfileComponent } 
+    ]},
       { path:'landing',component:LandingPageComponent,
     children:[
       {path:'',pathMatch:'full',redirectTo:'dashboard'},
@@ -58,7 +68,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
       { path:'user',component:UserComponent },
       { path:'changepassword',component:ChangePasswordComponent },
       { path:'profile',component:ProfileComponent }     
-    ]},
+    ]}
       // { path:'user',component:UserComponent },
       // { path:'forgotpassword',component:ForgotPasswordComponent },
       // { path:'profile',component:ProfileComponent },

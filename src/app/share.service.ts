@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 export class ShareService {
 
   user:any={};
-  projects:any={};
+  // projects:any={};
 
   constructor() { }
   setUser(value){
@@ -16,11 +16,11 @@ export class ShareService {
   getUser(){
     return this.user;
   }
-  setProjects(value){
-    this.projects=value;
-  }
-  getProjects(){
-    return this.projects;
-  }
+  // setProjects(value){
+  //   this.projects=value;
+  // }
+  // getProjects(){
+  //   return this.projects;
+  // }
 
 }

@@ -24,8 +24,16 @@ export class LoginComponent implements OnInit {
          this.loginService.onLogin(value).subscribe(res=>{
            this.user=res;
            console.log(this.user);
+           if(res && res.role=="user"){
+            this.router.navigate(['/userlanding']);
+           }else if(res && res.role=="admin"){
+            this.router.navigate(['/landing']);
+           }
+           else{
+            this.router.navigate(['/login']);
+           }
     
-           this.router.navigate(['/landing']);
+           
            this.shareservice.setUser(res);
           
           

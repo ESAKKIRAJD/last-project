@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {ShareService} from '../share.service';
 
+import {DataServiceService} from '../data-service.service';
+
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
@@ -10,11 +12,15 @@ import {ShareService} from '../share.service';
 export class ProjectsComponent implements OnInit {
   projects=[];
 
-  constructor( public projectsService:ShareService) { }
+  constructor( 
+   public projectService:DataServiceService) { }
 
   ngOnInit() {
-      this.projects=this.projectsService.getProjects();
-      console.log(this.projects)
-  }
+    this.projectService.getProjects()
+    .subscribe(res=>{
+      this.projects=res;
+      
+  });
 
+}
 }
