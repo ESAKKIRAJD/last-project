@@ -20,7 +20,7 @@ import { PaymentComponent } from './payment/payment.component';
 
 
 import { DataServiceService } from './data-service.service';
-import {ShareService} from './share.service';
+import { ShareService } from './share.service';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LandingUserpageComponent } from './landing-userpage/landing-userpage.component';
 
@@ -49,10 +49,10 @@ import { LandingUserpageComponent } from './landing-userpage/landing-userpage.co
     RouterModule.forRoot([
       {path:'', pathMatch:'full', redirectTo:'login'},
       { path:'login',component:LoginComponent },
-      { path:'forgotpassword',component:ForgotPasswordComponent },
+      { path:'forgotpassword',component:ForgotPasswordComponent },      
       { path:'userlanding',component:LandingUserpageComponent,
     children:[
-      {path:'',pathMatch:'full',redirectTo:'dashboard'},
+      { path:'',pathMatch:'full',redirectTo:'dashboard' },
       { path:'dashboard',component:DashboardComponent },
       { path:'status',component:StatusComponent },
       { path:'changepassword',component:ChangePasswordComponent },
@@ -60,24 +60,16 @@ import { LandingUserpageComponent } from './landing-userpage/landing-userpage.co
     ]},
       { path:'landing',component:LandingPageComponent,
     children:[
-      {path:'',pathMatch:'full',redirectTo:'dashboard'},
+      { path:'',pathMatch:'full',redirectTo:'dashboard' },
       { path:'dashboard',component:DashboardComponent },
       { path:'projects',component:ProjectsComponent},
       { path:'status',component:StatusComponent },
-      { path:'payment',component:PaymentComponent},
+      { path:'payment',component:PaymentComponent },
       { path:'user',component:UserComponent },
       { path:'changepassword',component:ChangePasswordComponent },
-      { path:'profile',component:ProfileComponent }     
+      { path:'profile',component:ProfileComponent },
+      { path:'newprojects',component: NewProjectsComponent }     
     ]}
-      // { path:'user',component:UserComponent },
-      // { path:'forgotpassword',component:ForgotPasswordComponent },
-      // { path:'profile',component:ProfileComponent },
-      // { path:'dashboard',component:DashboardComponent },
-      // { path:'projects',component:ProjectsComponent },
-      // { path:'status',component:StatusComponent },
-      // { path:'changepassword',component:ChangePasswordComponent },
-      // { path:'newprojects',component:NewProjectsComponent },
-      // { path:'payment',component:PaymentComponent },
 
     ])
   ],
