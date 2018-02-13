@@ -6,24 +6,41 @@
                             <h4 class="card-title">Edit Profile -
                                 <small class="category">Complete your profile</small>
                             </h4>
-                            <form>
+                            <form #profileForm="ngForm" (ngSubmit)='profile(profileForm.value)' method="#" action="#">
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">Company (disabled)</label>
-                                            <input type="text" class="form-control" disabled="">
+                                            <input type="text" class="form-control" disabled="">                                           
                                         <span class="material-input"></span></div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">Username</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="username"  #Username="ngModel" minlength="4" required ngModel>
+                                            <div *ngIf="Username.errors && (Username.touched|| Username.dirty)" class="alert text-danger">
+                                                    <div [hidden]="!Username.errors.required">
+                                                        required valid username
+                                                      </div>
+                                                      <div [hidden]="!Username.errors.minlength">
+                                                          Please fill 4 char
+                                                      </div>                              
+                                            </div>
                                         <span class="material-input"></span></div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">Email address</label>
-                                            <input type="email" class="form-control">
+                                            <input type="email" class="form-control" name="email"  #Email="ngModel" 
+                                            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required ngModel>
+                                            <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-danger">
+                                                    <div [hidden]="!Email.errors.required">
+                                                        required valid email
+                                                    </div>
+                                                    <div [hidden]="!Email.errors.pattern">
+                                                          Please enter min char 8
+                                                    </div>                                                      
+                                             </div>
                                         <span class="material-input"></span></div>
                                     </div>
                                 </div>
@@ -31,13 +48,31 @@
                                     <div class="col-md-6">
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">Fist Name</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control"  name="fname" #firstname="ngModel"
+                                            minlength="6" required ngModel>
+                                            <div *ngIf="firstname.errors && (firstname.touched|| firstname.dirty)" class="alert text-danger">
+                                                    <div [hidden]="!firstname.errors.required">
+                                                            required valid firstname
+                                                    </div>
+                                                    <div [hidden]="!firstname.errors.minlength">
+                                                          Please enter min char 6
+                                                    </div>                                                      
+                                             </div>
                                         <span class="material-input"></span></div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">Last Name</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="lname" #lastname="ngModel"
+                                            minlength="6" required ngModel>
+                                            <div *ngIf="lastname.errors && (lastname.touched|| lastname.dirty)" class="alert text-danger">
+                                                    <div [hidden]="!lastname.errors.required">
+                                                        required valid lastname
+                                                    </div>
+                                                    <div [hidden]="!lastname.errors.minlength">
+                                                          Please enter min char 6
+                                                    </div>                                                      
+                                             </div>
                                         <span class="material-input"></span></div>
                                     </div>
                                 </div>
@@ -45,7 +80,14 @@
                                     <div class="col-md-12">
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">Adress</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="address" #address="ngModel"
+                                            required ngModel>
+                                            <div *ngIf="address.errors && (address.touched|| address.dirty)" class="alert text-danger">
+                                                    
+                                                    <div [hidden]="!address.errors.required">
+                                                          Please enter valid address
+                                                    </div>                                                      
+                                             </div>
                                         <span class="material-input"></span></div>
                                     </div>
                                 </div>
@@ -53,19 +95,40 @@
                                     <div class="col-md-4">
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">City</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="city" #city="ngModel" 
+                                            required ngModel>
+                                            <div *ngIf="city.errors && (city.touched|| city.dirty)" class="alert text-danger">
+                                                    
+                                                    <div [hidden]="!city.errors.required">
+                                                          Please enter valid city
+                                                    </div>                                                      
+                                             </div>
                                         <span class="material-input"></span></div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">Country</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="country" #country="ngModel"
+                                            required ngModel>
+                                            <div *ngIf="country.errors && (country.touched|| country.dirty)" class="alert text-danger">
+                                                    
+                                                    <div [hidden]="!country.errors.required">
+                                                          Please enter valid country
+                                                    </div>                                                      
+                                             </div>
                                         <span class="material-input"></span></div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">Postal Code</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="postal" #Postal="ngModel" 
+                                            required ngModel>
+                                            <div *ngIf="Postal.errors && (Postal.touched|| Postal.dirty)" class="alert text-danger">
+                                                    
+                                                    <div [hidden]="!Postal.errors.required">
+                                                          Please enter valid Postal-Code
+                                                    </div>                                                      
+                                             </div>
                                         <span class="material-input"></span></div>
                                     </div>
                                 </div>
@@ -80,7 +143,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary pull-right">Update status<div class="ripple-container"></div></button>
+                                <button class="btn btn-primary btn-raised" type="submit" [disabled]="!profileForm.form.valid">
+                                Update status<div class="ripple-container"></div></button>
                                 <div class="clearfix"></div>
                             </form>
                         </div>
