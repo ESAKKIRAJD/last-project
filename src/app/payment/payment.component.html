@@ -1,162 +1,159 @@
 <div class="content">
-        <div class="container-fluid">
-            <div class="col-md-12">
-                    <div class="card">
-                        <form method="get" action="/" class="form-horizontal">
-                            <div class="card-header card-header-text">
-                                <h4 class="card-title">Payment</h4>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <form method="get" action="/" class="form-horizontal">
+                    <div class="card-header card-header-text">
+                        <h4 class="card-title">Payment</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <label class="col-sm-4 label-on-left">Client</label>
+                                <div class="col-sm-8">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <select>
+                                            <option>client 1</option>
+                                            <option>client 2</option>
+                                            <option>client 3</option>
+                                        </select>
+                                         <span class="material-input"></span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-content">
-                                <div class="row">
-                                    <label class="col-sm-4 label-on-left">Client</label>
-                                    <div class="col-sm-8">
-                                        <div class="form-group label-floating is-empty">
-                                            <label class="control-label"></label>
-                                            <select>
-                                                <option>client 1</option>
-                                                <option>client 2</option>
-                                                <option>client 3</option>
-                                            </select>
+                            <div class="row">
+                                <label class="col-sm-4 label-on-left">Project</label>
+                                <div class="col-sm-8">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <select>
+                                            <option>project 1</option>
+                                            <option>project 2</option>
+                                             <option>project 3</option>
+                                        </select>
+                                    <span class="material-input"></span></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-4 label-on-left">Total Cost</label>
+                                <div class="col-sm-8">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label"></label>
+                                        <input type="text" class="form-control" value="">
                                         <span class="material-input"></span>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <label class="col-sm-4 label-on-left">Project</label>
-                                    <div class="col-sm-8">
-                                        <div class="form-group label-floating is-empty">
-                                            <label class="control-label"></label>
-                                            <select>
-                                                <option>project 1</option>
-                                                <option>project 2</option>
-                                                <option>project 3</option>
-                                            </select>
-                                        <span class="material-input"></span></div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-4 label-on-left">Payment Pending</label>
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" value="0" readonly>
+                                        <span class="material-input"></span>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <label class="col-sm-4 label-on-left">Total Cost</label>
-                                    <div class="col-sm-8">
-                                        <div class="form-group label-floating is-empty">
-                                            <label class="control-label"></label>
-                                            <input type="text" class="form-control" value="">
-                                        <span class="material-input"></span></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <label class="col-sm-4 label-on-left">Payment Pending</label>
-                                    <div class="col-sm-8">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" value="0" readonly>
-                                            <span class="material-input"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <label class="col-sm-4 label-on-left"></label>
-                                    <div class="col-sm-8">
-                                        <a href="#" data-target="#clientmodal" data-toggle="modal">Client Payment</a>
-                                                <div class="modal" id="clientmodal" tabindex="-1">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button class="close" data-dismiss="modal">&times;</button>
-                                                                <h4>Client Payment</h4>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <form>
-                                                                    <div class="form-group label-floating is-empty">
-                                                                        <div class="row">                                
-                                                                            <label class="col-sm-4 label-on-left">Amount</label>
-                                                                            <div class="col-sm-8">
-                                                                                <input type="text" class="form-control">
-                                                                                <span class="material-input"></span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <div class="form-group label-floating is-empty">
-                                                                            <div class="row">
-                                                                                <label class="col-sm-4 label-on-left">Date</label>
-                                                                                <div class="col-sm-8">
-                                                                                    <input type="date" class="form-control">
-                                                                                    <span class="material-input"></span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="row pull">
-                                                                        <div class="col-md-6">
-                                                                            <a href="payment.html" class="btn btn-primary btn-simple">CREATE<div class="ripple-container"></div></a>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <a href="payment.html" class="btn btn-primary btn-simple">CANCEL<div class="ripple-container"></div></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                        </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-4 label-on-left"></label>
+                                <div class="col-sm-8">
+                                    <a href="#" data-target="#clientmodal" data-toggle="modal">Client Payment</a>
+                                        <div class="modal" id="clientmodal" tabindex="-1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button class="close" data-dismiss="modal">&times;</button>
+                                                        <h4>Client Payment</h4>
                                                     </div>
-                                                </div>
-                                            </div>                                
-                                        </div>
-                                    </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-content">
-                                                <h4 class="card-title">Payment List</h4>
-                                                <div class="table-responsive">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th class="text-center">#</th>
-                                                                <th>Project</th>
-                                                                <th>Status</th>
-                                                                <th class="text-right">Completed</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="text-center">1</td>
-                                                                <td>Andrew Mike</td>
-                                                                <td>Develop</td>
-                                                                <td class="text-right">2013</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-center">2</td>
-                                                                <td>John Doe</td>
-                                                                <td>Design</td>
-                                                                <td class="text-right">2012</td>
-                                                             </tr>
-                                                            <tr>
-                                                                <td class="text-center">3</td>
-                                                                <td>Alex Mike</td>
-                                                                <td>Design</td>
-                                                                <td class="text-right">2010</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-center">4</td>
-                                                                <td>Mike Monday</td>
-                                                                <td>Marketing</td>
-                                                                <td class="text-right">2013</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-center">5</td>
-                                                                <td>Paul Dickens</td>
-                                                                <td>Communication</td>
-                                                                <td class="text-right">2015</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div class="form-group label-floating is-empty">
+                                                                <div class="row">                                
+                                                                    <label class="col-sm-4 label-on-left">Amount</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" name="amount" #amount="ngModel"
+                                                                            required ngModel>
+                                                                            <div *ngIf="amount.errors && (amount.touched|| amount.dirty)" class="alert text-danger">
+                                                                                    <div [hidden]="!amount.errors.required">
+                                                                                         amount enter
+                                                                                    </div>                                                                                                                                        
+                                                                             </div>
+                                                                            <span class="material-input"></span>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="form-group label-floating is-empty">
+                                                                    <div class="row">
+                                                                        <label class="col-sm-4 label-on-left">Date</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="date" class="form-control" name="date" #date="ngModel"
+                                                                            required ngModel>
+                                                                            <div *ngIf="date.errors && (date.touched|| date.dirty)" class="alert text-danger">
+                                                                                    <div [hidden]="!date.errors.required">
+                                                                                            select date 
+                                                                                    </div>                                                                                                                                        
+                                                                             </div>
+                                                                        
+                                                                            <span class="material-input"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row pull">
+                                                                <div class="col-md-6">
+                                                                    <a routerLink="landing/payment" class="btn btn-primary btn-simple">CREATE<div class="ripple-container"></div></a>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <a routerLink="landing/payment" class="btn btn-primary btn-simple">CANCEL<div class="ripple-container"></div></a>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                     </div>
+                                    </div>                                
                                 </div>
-                              </form>                                                   
+                            </div>                            
+                        </form>                                                   
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-content">
+                                <h4 class="card-title">Payment List</h4>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">#</th>
+                                                <th>Client Name</th>
+                                                <th>Amount Paied</th>
+                                                <th class="text-right">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td>Andrew Mike</td>
+                                                <td>300</td>
+                                                <td class="text-right">01/01/2018</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td>John Doe</td>
+                                                <td>200</td>
+                                                <td class="text-right">01/02/2018</td>
+                                             </tr>                                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                     </div>
+                    </div>
                 </div>
         </div>
-    
+    </div>
