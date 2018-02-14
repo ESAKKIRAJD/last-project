@@ -35,3 +35,14 @@
 	margin-top: 0;
 }
 .btn-group>.btn:first-child{padding:0;}*/
+
+
+.alert{
+    padding: 0;  
+   
+}
+
+.alert, .alert.alert-default {
+color:#ff0000;
+box-shadow: none;
+}
