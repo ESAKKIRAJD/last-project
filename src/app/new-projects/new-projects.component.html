@@ -7,7 +7,7 @@
                                   <h4 class="card-title">Add new projects</h4>
                               </div>
                               <div class="card-content">
-                                  <!-- <div class="row">
+                                   <div class="row">
                                       <label class="col-sm-2 label-on-left">Project Name</label>
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
@@ -18,21 +18,15 @@
                                                   <option value="project 2">project 2</option>
                                                   <option value="project 3">project 3</option>
                                               </select>
+                                              <div *ngIf="Projects.errors && Projects.touched" class="alert text-danger">
+                                                    <div [hidden]="!Projects.errors.required">
+                                                        select Projects
+                                                    </div>
+                                                </div>
                                           <span class="material-input"></span>
                                           </div>
                                       </div>
-                                  </div> -->
-                                  <div class="row">
-                                        <label class="col-sm-2 label-on-left">Project Name</label>
-                                        <div class="col-sm-10">
-                                            <div class="form-group label-floating is-empty">
-                                                <label class="control-label"></label>
-                                                <input class="form-control" name="projects" #Projects="ngModel" required ngModel>
-                                                    
-                                            <span class="material-input"></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  </div>
                                   <div class="row">
                                       <label class="col-sm-2 label-on-left">Client</label>
                                       <div class="col-sm-10">
@@ -44,10 +38,20 @@
                                                   <option value="client 2">client 2</option>
                                                   <option value="client 3">client 3</option>
                                               </select>
+                                              <div *ngIf="Clients.errors && Clients.touched" class="alert text-danger">
+                                                    <div [hidden]="!Clients.errors.required">
+                                                        select Clients
+                                                    </div>
+                                                </div>
                                               <br>
                                               <br>
                                               <p>or add client below</p>
-                                              <input type="text" class="form-control" value="" name="addclient" #Add Client="ngModel" required ngModel>
+                                              <input type="text" class="form-control" value="" name="addclient" #addClient="ngModel" required ngModel>
+                                              <div *ngIf="addClient.errors && addClient.touched" class="alert text-danger">
+                                                    <div [hidden]="!addClient.errors.required">
+                                                         Add New Client
+                                                    </div>
+                                                </div>
                                           <span class="material-input"></span></div>
                                       </div>
                                   </div>
@@ -57,6 +61,11 @@
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
                                               <input type="text" class="form-control" value="" name="time" #Time="ngModel" required ngModel>
+                                              <div *ngIf="Time.errors && Time.touched" class="alert text-danger">
+                                                    <div [hidden]="!Time.errors.required">
+                                                        write Time
+                                                    </div>
+                                                </div>
                                           <span class="material-input"></span></div>
                                       </div>
                                   </div>
@@ -64,7 +73,12 @@
                                       <label class="col-sm-2 label-on-left">Start Date</label>
                                       <div class="col-sm-10">
                                           <div class="form-group">
-                                              <input type="date" class="form-control datepicker" value="10/05/2016" name="Start Date" #start date="ngModel" required ngModel>
+                                              <input type="date" class="form-control datepicker" value="10/05/2016" name="Start Date" #startdate="ngModel" required ngModel>
+                                              <div *ngIf="startdate.errors && startdate.touched" class="alert text-danger">
+                                                    <div [hidden]="!startdate.errors.required">
+                                                        select start date
+                                                    </div>
+                                                </div>
                                               <span class="material-input"></span>
                                           </div>
                                       </div>
@@ -75,6 +89,11 @@
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
                                               <input type="text-area" rows="10" cols="40" class="form-control" name="description" #Description="ngModel" required ngModel>
+                                              <div *ngIf="Description.errors && Description.touched" class="alert text-danger">
+                                                    <div [hidden]="!Description.errors.required">
+                                                        write Description
+                                                    </div>
+                                                </div>
                                           <span class="material-input"></span></div>
                                       </div>
                                   </div>

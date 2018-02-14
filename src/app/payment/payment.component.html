@@ -13,11 +13,16 @@
                                 <div class="col-sm-8">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label"></label>
-                                        <select>
+                                        <select class="select form-control" name="client" #client="ngModel" required ngModel>
                                             <option>client 1</option>
                                             <option>client 2</option>
                                             <option>client 3</option>
                                         </select>
+                                        <div *ngIf="client.errors && (client.touched || client.dirty)" class="alert text-danger">
+                                            <div [hidden]="!client.errors.required">
+                                                please select the client
+                                            </div>
+                                        </div>
                                          <span class="material-input"></span>
                                     </div>
                                 </div>
@@ -27,11 +32,16 @@
                                 <div class="col-sm-8">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label"></label>
-                                        <select>
+                                        <select  class="select form-control" name="project" #project="ngModel" required ngModel>
                                             <option>project 1</option>
                                             <option>project 2</option>
                                              <option>project 3</option>
                                         </select>
+                                        <div *ngIf="project.errors && (project.touched || project.dirty)" class="alert text-danger">
+                                                <div [hidden]="!project.errors.required">
+                                                    please select the project
+                                                </div>
+                                        </div>
                                     <span class="material-input"></span></div>
                                 </div>
                             </div>
@@ -40,7 +50,12 @@
                                 <div class="col-sm-8">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label"></label>
-                                        <input type="text" class="form-control" value="">
+                                        <input type="text" class="form-control" value="" name="cost" #cost="ngModel"  required ngModel>
+                                        <div *ngIf="cost.errors &&(cost.touched || cost.dirty)"  class="alert text-danger">
+                                            <div [hidden]="!cost.errors.required">
+                                                Please enter the cost
+                                            </div>
+                                        </div>
                                         <span class="material-input"></span>
                                     </div>
                                 </div>
@@ -49,7 +64,12 @@
                                 <label class="col-sm-4 label-on-left">Payment Pending</label>
                                 <div class="col-sm-8">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" value="0" readonly>
+                                        <input type="text" class="form-control" value="0" name="payment" #payment="ngModel"  required ngModel readonly >
+                                        <div *ngIf="payment.errors &&(payment.touched || payment.dirty)"  class="alert text-danger">
+                                                <div [hidden]="!payment.errors.required">
+                                                    Please see the pending payment
+                                                </div>
+                                            </div>
                                         <span class="material-input"></span>
                                     </div>
                                 </div>
