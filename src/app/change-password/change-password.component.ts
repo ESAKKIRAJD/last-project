@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+
+import {DataServiceService} from '../data-service.service';
 
 @Component({
   selector: 'app-change-password',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private changepasswordService:DataServiceService,private router:Router) { }
 
   ngOnInit() {
   }
+
+  onChangepass(value){
+      console.log(value)
+       this.router.navigate(['/landing/dashboard']);
+       }
 
 }

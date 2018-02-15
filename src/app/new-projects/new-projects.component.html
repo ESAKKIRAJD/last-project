@@ -73,7 +73,7 @@
                                       <label class="col-sm-2 label-on-left">Start Date</label>
                                       <div class="col-sm-10">
                                           <div class="form-group">
-                                              <input type="date" class="form-control datepicker" value="10/05/2016" name="Start Date" #startdate="ngModel" required ngModel>
+                                              <input type="text" class="form-control datepicker" value="10/05/2016" name="Start Date" #startdate="ngModel" required ngModel>
                                               <div *ngIf="startdate.errors && startdate.touched" class="alert text-danger">
                                                     <div [hidden]="!startdate.errors.required">
                                                         select start date
