@@ -11,5 +11,7 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit() {
   }
-
+onPayment(value){
+  console.log(value)
+}
 }

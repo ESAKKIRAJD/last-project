@@ -12,7 +12,8 @@
                             <span class="input-group-addon">
                                 <i class="material-icons">face</i>
                             </span>
-                            <div class="form-group is-empty">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label">Username</label>
                                 <input type="text" name="username" class="form-control" #Username="ngModel" minlength="4" required ngModel>
                                 <div *ngIf="Username.errors && (Username.touched|| Username.dirty)" class="alert text-danger">
                                         <div [hidden]="!Username.errors.required">
@@ -29,7 +30,8 @@
                             <span class="input-group-addon">
                                 <i class="material-icons">email</i>
                             </span>
-                            <div class="form-group is-empty">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label">Email</label>
                                 <input type="email" name="email"  #Email="ngModel" class="form-control" 
                                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required ngModel>
                                 <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-danger">
@@ -47,7 +49,8 @@
                             <span class="input-group-addon">
                                 <i class="material-icons">lock_outline</i>
                             </span>
-                            <div class="form-group is-empty">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label">Password</label>
                                 <input type="password" name="password"  class="form-control"  name="password" #Password="ngModel" minlength="6" required  ngModel>
                                 <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-danger">
                                         <div [hidden]="!Password.errors.required">
@@ -89,6 +92,59 @@
                         </div>
                     </div>
                     </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <h4 class="card-title">User List</h4>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th>User Name</th>
+                                            <th>Email</th>
+                                            <th class="text-right">Password</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>Andrew Mike</td>
+                                            <td>Develop</td>
+                                            <td class="text-right">2013</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>John Doe</td>
+                                            <td>Design</td>
+                                            <td class="text-right">2012</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">3</td>
+                                            <td>Alex Mike</td>
+                                            <td>Design</td>
+                                            <td class="text-right">2010</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">4</td>
+                                            <td>Mike Monday</td>
+                                            <td>Marketing</td>
+                                            <td class="text-right">2013</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">5</td>
+                                            <td>Paul Dickens</td>
+                                            <td>Communication</td>
+                                            <td class="text-right">2015</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
