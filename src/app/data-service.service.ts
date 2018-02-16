@@ -20,23 +20,23 @@ export class DataServiceService {
 
   onLogin(value){
     // console.log(value);
-    return this.http.post('http://localhost:4000/findprofile',value)
+    return this.http.post('https://young-mountain-97541.herokuapp.com/findprofile',value)
     .map(result =>this.loginUser=result.json())
   }
 
   onForgot(value){
     console.log(value);
-     return this.http.post('http://localhost:4000/forgotpwd',value)
+     return this.http.post('https://young-mountain-97541.herokuapp.com/forgotpwd',value)
      .map(result =>this.forgotUser=result.json())
   } 
   onProfile(value){
     console.log(value);
-     return this.http.post('http://localhost:4000/updateprofile',value)
+     return this.http.post('https://young-mountain-97541.herokuapp.com/updateprofile',value)
      .map(result =>this.profileUser=result.json())
   }
   getProjects(){
     
-  return this.http.get('http://localhost:4000/projectlists')
+  return this.http.get('https://young-mountain-97541.herokuapp.com/projectlists')
   .map((dashborddetails:Response)=>dashborddetails.json())
 } 
 
@@ -44,25 +44,25 @@ export class DataServiceService {
 
 addUser(value){ 
   console.log(this.regUser);
-  return this.http.post('http://localhost:4000/adduser',value)
+  return this.http.post('https://young-mountain-97541.herokuapp.com/adduser',value)
   .map(result=>this.regUser=result.json())
   
 
 }
 //status update
 onUpdate(value){
-return this.http.post('http://localhost:4000/projectupdate',value)
+return this.http.post('https://young-mountain-97541.herokuapp.com/projectupdate',value)
 .map((updateDetails:Response)=>updateDetails.json())
 }
 //add new projects
 onNewprojects(value){
-  return this.http.post('http://localhost:4000/',value)
+  return this.http.post('https://young-mountain-97541.herokuapp.com/',value)
   .map((createdDetails:Response)=>createdDetails.json())
    }
 
    //add change password
    onChangepass(value){
-  return this.http.post('http://localhost:4000/',value)
+  return this.http.post('https://young-mountain-97541.herokuapp.com/',value)
   .map((createdDetails:Response)=>createdDetails.json())
    }
 
