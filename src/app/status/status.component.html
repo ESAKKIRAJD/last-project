@@ -13,7 +13,7 @@
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label"></label>
                                             <select class="select form-control" name="appname" #appname="ngModel" required ngModel>
-                                                  <option value="" disabled>select project</option>
+                                                  <option value=""></option>
                                                 <option *ngFor="let project of projects">{{project.appname}}</option>
                                             </select>
                                             <div *ngIf="appname.errors && appname.touched" class="alert text-danger">
@@ -32,7 +32,7 @@
                                       <div class="form-group label-floating is-empty">
                                           <label class="control-label"></label>
                                           <select class="select form-control" name="client" #client="ngModel" required ngModel>
-                                              <option value="" disabled>select client</option>
+                                              <option value="" ></option>
                                               <option *ngFor="let project of projects">{{project.client}}</option>
                                           </select>
                                           <div *ngIf="client.errors && client.touched" class="alert text-danger">
