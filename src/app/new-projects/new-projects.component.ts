@@ -24,6 +24,7 @@ export class NewProjectsComponent implements OnInit {
     console.log(value);
     this.newprojectService.onNewprojects(value).subscribe(res=>{
       console.log(res);
+      this.router.navigate(['/landing/projects']);
     })
   }
   

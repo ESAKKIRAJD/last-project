@@ -10,9 +10,7 @@
 	padding: 2%;
 }
 .card-content select{
-	width: 100%;
-    padding: 2%;
-    border-color:  gainsboro;
+    padding: 0;  
 }
 .card-content select:hover{
 	border:2px solid #9c27b0;
@@ -31,10 +29,7 @@
 	background-color: #9c27b0;
 	color: white;
 }
-/*.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
-	margin-top: 0;
-}
-.btn-group>.btn:first-child{padding:0;}*/
+
 
 
 .alert{
