@@ -21,8 +21,12 @@ import { PaymentComponent } from './payment/payment.component';
 
 import { DataServiceService } from './data-service.service';
 import { ShareService } from './share.service';
+import { LoaderService } from './index'
+
+
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LandingUserpageComponent } from './landing-userpage/landing-userpage.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 
@@ -40,7 +44,8 @@ import { LandingUserpageComponent } from './landing-userpage/landing-userpage.co
     NewProjectsComponent,
     PaymentComponent,
     LandingPageComponent,
-    LandingUserpageComponent
+    LandingUserpageComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +79,8 @@ import { LandingUserpageComponent } from './landing-userpage/landing-userpage.co
     ])
   ],
   providers: [DataServiceService,
-              ShareService],
+              ShareService,
+              LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

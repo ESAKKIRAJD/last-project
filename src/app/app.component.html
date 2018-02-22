@@ -1,6 +1,11 @@
 
-
-<router-outlet></router-outlet>
+<!-- 
+<router-outlet></router-outlet> -->
 <!-- <app-landing-page></app-landing-page> -->
 <!-- <app-dashboard></app-dashboard> -->
 <!-- <app-projects></app-projects> -->
+
+
+<router-outlet>
+    <app-spinner [showSpinner]="showLoader"></app-spinner>
+</router-outlet>

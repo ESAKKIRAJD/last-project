@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import {DataServiceService} from '../data-service.service';
 import {ShareService} from '../share.service';
 
+import { LoaderService } from '../index'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,13 +16,15 @@ export class LoginComponent implements OnInit {
   user=[];
 
   constructor(private loginService:DataServiceService,private router:Router,
-    private shareservice:ShareService) { }
+    private shareservice:ShareService,
+  private loaderService:LoaderService) { }
 
   ngOnInit() {
   }
 
   onLogin(value){
-    
+           //http call starts
+this.loaderService.display(true);
          this.loginService.onLogin(value).subscribe(res=>{
            this.user=res;
            console.log(this.user);
@@ -36,7 +40,8 @@ export class LoginComponent implements OnInit {
            
            this.shareservice.setUser(res);
           
-          
+                   //http call ends
+this.loaderService.display(false);
          });
     
          }

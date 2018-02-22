@@ -8,6 +8,8 @@ import {DataServiceService} from '../data-service.service';
 
 import {ShareService} from '../share.service';
 
+import { LoaderService } from '../index'
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -18,17 +20,22 @@ export class DashboardComponent implements OnInit {
   user=[];
   
 
-  constructor(private dashbordservice:DataServiceService,
+  constructor(private loaderService:LoaderService,
+    private dashbordservice:DataServiceService,
     private profileService:ShareService) { 
       
     }
   
 
   ngOnInit() {
+        //http call starts
+this.loaderService.display(true);
     this.dashbordservice.getProjects()
     .subscribe(res=>{
       this.projects=res;
       console.log(res);
+          //http call ends
+this.loaderService.display(false);
       // this.profileService.setProjects(res);
     });
     
