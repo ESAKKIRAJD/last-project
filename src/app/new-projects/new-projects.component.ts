@@ -10,10 +10,14 @@ import {DataServiceService} from '../data-service.service';
   styleUrls: ['./new-projects.component.css']
 })
 export class NewProjectsComponent implements OnInit {
-
+projects={};
   constructor(private newprojectService:DataServiceService,private router:Router) { }
 
   ngOnInit() {
+    this.newprojectService.getProjects()
+    .subscribe(res=>{
+      this.projects=res;
+  })
   }
 //   onNewprojects(value){
 //  console.log(value)
