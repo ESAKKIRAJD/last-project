@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 import {DataServiceService} from '../data-service.service';
@@ -12,7 +13,8 @@ export class StatusComponent implements OnInit {
 
   projects=[];
 
-  constructor( private statusService:DataServiceService) { }
+  constructor( private statusService:DataServiceService,
+    private router:Router) { }
 
   ngOnInit() {
     this.statusService.getProjects()
@@ -24,6 +26,7 @@ onUpdate(value){
   console.log(value);
   this.statusService.onUpdate(value).subscribe(res=>{
     console.log(res);
+    this.router.navigate(['/landing/projects']);
   })
 }
 

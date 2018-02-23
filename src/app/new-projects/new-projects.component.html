@@ -12,15 +12,16 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <select class="form-control" name="projects" #Projects="ngModel" required ngModel>
-                                                  <option value="projects" disabled>projects</option>
-                                                  <option value="project 1">project 1</option>
-                                                  <option value="project 2">project 2</option>
-                                                  <option value="project 3">project 3</option>
+                                              <select class="form-control" name="appname" #appname="ngModel"
+                                               required ngModel>
+                                                  <option value="appname" disabled>appname</option>
+                                                  <option value="appname 1">appname 1</option>
+                                                  <option value="appname 2">appname 2</option>
+                                                  <option value="appname 3">appname 3</option>
                                               </select>
-                                              <div *ngIf="Projects.errors && Projects.touched" class="alert text-danger">
-                                                    <div [hidden]="!Projects.errors.required">
-                                                        select Projects
+                                              <div *ngIf="appname.errors && appname.touched" class="alert text-danger">
+                                                    <div [hidden]="!appname.errors.required">
+                                                        select appname
                                                     </div>
                                                 </div>
                                           <span class="material-input"></span>
@@ -32,37 +33,44 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <select class="form-control" name="clients" #Clients="ngModel" required ngModel>
+                                              <select class="form-control" name="client" #client="ngModel" required ngModel>
                                                   <option value="clients" disabled>clients</option>
                                                   <option value="client 1">client 1</option>
                                                   <option value="client 2">client 2</option>
                                                   <option value="client 3">client 3</option>
                                               </select>
-                                              <div *ngIf="Clients.errors && Clients.touched" class="alert text-danger">
-                                                    <div [hidden]="!Clients.errors.required">
+                                              <div *ngIf="client.errors && client.touched" class="alert text-danger">
+                                                    <div [hidden]="!client.errors.required">
                                                         select Clients
-                                                    </div>
-                                                </div>
-                                              <br>
-                                              <br>
-                                              <p>or add client below</p>
-                                              <input type="text" class="form-control" value="" name="addclient" #addClient="ngModel" required ngModel>
-                                              <div *ngIf="addClient.errors && addClient.touched" class="alert text-danger">
-                                                    <div [hidden]="!addClient.errors.required">
-                                                         Add New Client
                                                     </div>
                                                 </div>
                                           <span class="material-input"></span></div>
                                       </div>
                                   </div>
                                   <div class="row">
+                                        <label class="col-sm-2 label-on-left"><p>or add client below</p></label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>                                           
+                                                <input type="text" class="form-control" value="" name="client" 
+                                                #client="ngModel" required ngModel>
+                                                <div *ngIf="client.errors && client.touched" class="alert text-danger">
+                                                      <div [hidden]="!client.errors.required">
+                                                           Add New Client
+                                                      </div>
+                                                  </div>
+                                            <span class="material-input"></span></div>
+                                        </div>
+                                    </div>
+                                  <div class="row">
                                       <label class="col-sm-2 label-on-left">Time Limit</label>
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <input type="text" class="form-control" value="" name="time" #Time="ngModel" required ngModel>
-                                              <div *ngIf="Time.errors && Time.touched" class="alert text-danger">
-                                                    <div [hidden]="!Time.errors.required">
+                                              <input type="text" class="form-control" value="" name="timelimit" #timelimit="ngModel"
+                                               required ngModel>
+                                              <div *ngIf="timelimit.errors && timelimit.touched" class="alert text-danger">
+                                                    <div [hidden]="!timelimit.errors.required">
                                                         write Time
                                                     </div>
                                                 </div>
@@ -73,7 +81,7 @@
                                       <label class="col-sm-2 label-on-left">Start Date</label>
                                       <div class="col-sm-10">
                                           <div class="form-group">
-                                              <input type="text" class="form-control datepicker" value="10/05/2016" name="Start Date" #startdate="ngModel" required ngModel>
+                                              <input type="text" class="form-control datepicker" value="10/05/2016" name="startdate" #startdate="ngModel" required ngModel>
                                               <div *ngIf="startdate.errors && startdate.touched" class="alert text-danger">
                                                     <div [hidden]="!startdate.errors.required">
                                                         select start date
@@ -88,9 +96,9 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <input type="text-area" rows="10" cols="40" class="form-control" name="description" #Description="ngModel" required ngModel>
-                                              <div *ngIf="Description.errors && Description.touched" class="alert text-danger">
-                                                    <div [hidden]="!Description.errors.required">
+                                              <input type="text-area" rows="10" cols="40" class="form-control" name="description" #description="ngModel" required ngModel>
+                                              <div *ngIf="description.errors && description.touched" class="alert text-danger">
+                                                    <div [hidden]="!description.errors.required">
                                                         write Description
                                                     </div>
                                                 </div>

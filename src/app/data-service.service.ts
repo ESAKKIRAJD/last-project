@@ -50,13 +50,15 @@ addUser(value){
 
 }
 //status update
+
 onUpdate(value){
 return this.http.post('https://young-mountain-97541.herokuapp.com/projectupdate',value)
 .map((updateDetails:Response)=>updateDetails.json())
 }
 //add new projects
+
 onNewprojects(value){
-  return this.http.post('https://young-mountain-97541.herokuapp.com/',value)
+  return this.http.post('https://young-mountain-97541.herokuapp.com/newproject',value)
   .map((createdDetails:Response)=>createdDetails.json())
    }
 
@@ -65,6 +67,13 @@ onNewprojects(value){
   return this.http.post('https://young-mountain-97541.herokuapp.com/',value)
   .map((createdDetails:Response)=>createdDetails.json())
    }
+
+   //get all users
+
+  // getUsers(){
+  //   return this.http.get('https://young-mountain-97541.herokuapp.com/')
+    
+  // }
 
 
 }

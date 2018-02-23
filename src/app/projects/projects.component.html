@@ -23,8 +23,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let project of projects">
-                                            <td class="text-center">{{project.slno}}</td>
+                                        <tr *ngFor="let project of projects; let i=index">
+                                            <td class="text-center">{{i+1}}</td>
                                             <td>{{project.appname}}</td>
                                             <td>{{project.client}}</td>
                                             <td class="text-right">{{project.appstatus}}</td>
