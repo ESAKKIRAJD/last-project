@@ -12,13 +12,8 @@
                                       <div class="col-sm-10">
                                           <div class="form-group label-floating is-empty">
                                               <label class="control-label"></label>
-                                              <select class="form-control" name="appname" #appname="ngModel"
-                                               required ngModel>
-                                                  <option value="appname" disabled>appname</option>
-                                                  <option value="appname 1">appname 1</option>
-                                                  <option value="appname 2">appname 2</option>
-                                                  <option value="appname 3">appname 3</option>
-                                              </select>
+                                              <input class="form-control" name="appname" #appname="ngModel"
+                                               required ngModel>                                               
                                               <div *ngIf="appname.errors && appname.touched" class="alert text-danger">
                                                     <div [hidden]="!appname.errors.required">
                                                         select appname
