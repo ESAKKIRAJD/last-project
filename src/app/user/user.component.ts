@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import {DataServiceService} from '../data-service.service';
+
+import { LoaderService } from '../index'
 
 @Component({
   selector: 'app-user',
@@ -10,7 +13,9 @@ import {DataServiceService} from '../data-service.service';
 export class UserComponent implements OnInit {
 user=[];
 allusers=[];
-  constructor( public addservice:DataServiceService) { }
+  constructor( private loaderService:LoaderService,
+     public addservice:DataServiceService,
+    private router:Router) { }
 
   ngOnInit() {
     this.addservice.getUsers().subscribe(
@@ -20,9 +25,19 @@ allusers=[];
     )
   }
   addUser(value){
+            //http call starts
+this.loaderService.display(true);
   this.addservice.addUser(value).subscribe(res=>{
   console.log(res);
   this.user=res;
+           //http call ends
+this.loaderService.display(false);
+  this.router.navigate(['/landing/user']);
+  this.addservice.getUsers().subscribe(
+    res=>{
+      this.allusers=res;
+    }
+  )
 })
   }
 }

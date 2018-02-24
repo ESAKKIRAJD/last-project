@@ -1,123 +1,124 @@
 <div class="content">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
-                    <form #addUserForm="ngForm" (ngSubmit)='addUser(addUserForm.value)' method="#" action="#">
-                        <div class="card card-login">
-                            <h4 class="category text-center">
-                                ADD USER
-                            </h4>
-                            <div class="card-content">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="material-icons">face</i>
-                            </span>
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">Username</label>
-                                <input type="text" name="username" class="form-control" #Username="ngModel" minlength="4" required ngModel>
-                                <div *ngIf="Username.errors && (Username.touched|| Username.dirty)" class="alert text-danger">
-                                        <div [hidden]="!Username.errors.required">
-                                            required valid username
-                                          </div>
-                                          <div [hidden]="!Username.errors.minlength">
-                                              Please fill 4 char
-                                          </div>                              
-                                </div>
-                                <span class="material-input"></span>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="material-icons">email</i>
-                            </span>
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">Email</label>
-                                <input type="email" name="email"  #Email="ngModel" class="form-control" 
-                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required ngModel>
-                                <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-danger">
-                                        <div [hidden]="!Email.errors.required">
-                                            required valid email
-                                        </div>
-                                        <div [hidden]="!Email.errors.pattern">
-                                              Please enter min char 8
-                                        </div>                                                      
-                                 </div>
-                                <span class="material-input"></span>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="material-icons">lock_outline</i>
-                            </span>
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">Password</label>
-                                <input type="password" name="password"  class="form-control"  name="password" #Password="ngModel" minlength="6" required  ngModel>
-                                <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-danger">
-                                        <div [hidden]="!Password.errors.required">
-                                                Please enter valid password   
-                                          </div>
-                                          <div [hidden]="!Password.errors.minlength">
-                                              Please enter min char 6
-                                          </div>
-                                    </div>
-                                <span class="material-input"></span>
-                            </div>
-                        </div>
-                        <!-- <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="material-icons">account_circle</i>
-                            </span>
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">Role</label>
-                                <input type="text" class="form-control" name="role" minlength="4" maxlength="4" required  ngModel>
-                                <div *ngIf="role.errors && (role.touched|| role.dirty)" class="alert text-danger">
-                                    <div [hidden]="!role.errors.required">
-                                        required valid role
-                                      </div>
-                                      <div [hidden]="!Password.errors.minlength">
-                                          Please enter minimum 4 char
-                                      </div>
-                                </div>                             <span class="material-input"></span></div>
-                        </div> -->
-                    </div>                                   
-                        <div class="row pull">
-                            <div class="col-md-6 col-sm-6">
-                                <input class="btn btn-primary btn-simple" type="submit" [disabled]="!addUserForm.form.valid" value="CREATE">
-                                <div class="ripple-container"></div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <a routerLink="/user" class="btn btn-primary btn-simple">CANCEL<div class="ripple-container"></div></a>
-                            </div>
-                        </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-12">
                     <div class="card">
-                        <div class="card-content">
-                            <h4 class="card-title">User List</h4>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>User Name</th>
-                                            <th>Email</th>                                           
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let users of allusers; let i=index">
-                                            <td>{{i+1}}</td>
-                                            <td>{{users.username}}</td>
-                                            <td>{{users.email}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <form #addUserForm="ngForm" (ngSubmit)='addUser(addUserForm.value)' method="#" action="#">
+                            <div class="card-header card-header-text">
+                                <h4 class="card-title">ADD USER</h4>
                             </div>
+                            <div class="card-content">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">face</i>
+                                        </span>
+                                        <div class="form-group label-floating is-empty">
+                                            <label class="control-label">Username</label>
+                                            <input type="text" name="username" class="form-control" #Username="ngModel" minlength="4" required ngModel>
+                                            <div *ngIf="Username.errors && (Username.touched|| Username.dirty)" class="alert text-danger">
+                                                    <div [hidden]="!Username.errors.required">
+                                                        required valid username
+                                                      </div>
+                                                      <div [hidden]="!Username.errors.minlength">
+                                                          Please fill 4 char
+                                                      </div>                              
+                                            </div>
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">email</i>
+                                        </span>
+                                        <div class="form-group label-floating is-empty">
+                                            <label class="control-label">Email</label>
+                                            <input type="email" name="email"  #Email="ngModel" class="form-control" 
+                                            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required ngModel>
+                                            <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-danger">
+                                                    <div [hidden]="!Email.errors.required">
+                                                        required valid email
+                                                    </div>
+                                                    <div [hidden]="!Email.errors.pattern">
+                                                          Please enter min char 8
+                                                    </div>                                                      
+                                             </div>
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                        <div class="form-group label-floating is-empty">
+                                            <label class="control-label">Password</label>
+                                            <input type="password" name="password"  class="form-control"  name="password" #Password="ngModel" minlength="6" required  ngModel>
+                                            <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-danger">
+                                                    <div [hidden]="!Password.errors.required">
+                                                            Please enter valid password   
+                                                      </div>
+                                                      <div [hidden]="!Password.errors.minlength">
+                                                          Please enter min char 6
+                                                      </div>
+                                                </div>
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">account_circle</i>
+                                        </span>
+                                        <div class="form-group label-floating is-empty">
+                                            <label class="control-label">Role</label>
+                                            <input type="text" class="form-control" name="role" minlength="4" maxlength="4" required  ngModel>
+                                            <div *ngIf="role.errors && (role.touched|| role.dirty)" class="alert text-danger">
+                                                <div [hidden]="!role.errors.required">
+                                                    required valid role
+                                                  </div>
+                                                  <div [hidden]="!Password.errors.minlength">
+                                                      Please enter minimum 4 char
+                                                  </div>
+                                            </div>                             <span class="material-input"></span></div>
+                                    </div> -->
+                                </div>                                   
+                                    <div class="row pull">
+                                        <div class="col-md-6 col-sm-6">
+                                            <input class="btn btn-primary btn-simple" type="submit" [disabled]="!addUserForm.form.valid" value="CREATE">
+                                            <div class="ripple-container"></div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <a routerLink="landing/user" class="btn btn-primary btn-simple">CANCEL<div class="ripple-container"></div></a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>                               
                         </div>
                     </div>
+                    <div class="row">
+                            <div class="col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <h4 class="card-title">User List</h4>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>User Name</th>
+                                                        <th>Email</th>                                           
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let users of allusers; let i=index">
+                                                        <td>{{i+1}}</td>
+                                                        <td>{{users.username}}</td>
+                                                        <td>{{users.email}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
-            </div>
         </div>
-   
