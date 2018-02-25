@@ -15,18 +15,23 @@ export class ProjectsComponent implements OnInit {
   projects=[];
 
   constructor( private loaderService:LoaderService,
-   public projectService:DataServiceService) { }
+   public projectService:DataServiceService) { 
+     this.Init();
+  }
+  Init(){
+        //http call starts
+this.loaderService.display(true);
+this.projectService.getProjects()
+.subscribe(res=>{
+  this.projects=res;
+  //http call ends
+this.loaderService.display(false);
+  
+});
+  }
 
   ngOnInit() {
-    //http call starts
-this.loaderService.display(true);
-    this.projectService.getProjects()
-    .subscribe(res=>{
-      this.projects=res;
-      //http call ends
-this.loaderService.display(false);
-      
-  });
+
 
 }
 }

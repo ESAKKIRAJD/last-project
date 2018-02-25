@@ -14,7 +14,7 @@ export class DataServiceService {
   regUser:any;
   updateDetails:any;
   createdDetails:any;
-   changepass:any;
+   changepassDetails:any;
    allusers:any; 
 
   constructor(private http:Http) { }
@@ -76,8 +76,8 @@ onNewprojects(value){
    // user change password
    
    onChangepass(value){
-  return this.http.post('https://young-mountain-97541.herokuapp.com/',value)
-  .map((createdDetails:Response)=>createdDetails.json())
+  return this.http.post('https://young-mountain-97541.herokuapp.com/changepassword',value)
+  .map((changepassDetails:Response)=>changepassDetails.json())
    }
 
   //  getUsers

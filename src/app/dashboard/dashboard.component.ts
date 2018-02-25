@@ -23,21 +23,23 @@ export class DashboardComponent implements OnInit {
   constructor(private loaderService:LoaderService,
     private dashbordservice:DataServiceService,
     private profileService:ShareService) { 
-      
+      this.Init()
     }
   
-
-  ngOnInit() {
+Init(){
         //http call starts
-this.loaderService.display(true);
-    this.dashbordservice.getProjects()
-    .subscribe(res=>{
-      this.projects=res;
-      console.log(res);
-          //http call ends
-this.loaderService.display(false);
-      // this.profileService.setProjects(res);
-    });
+        this.loaderService.display(true);
+        this.dashbordservice.getProjects()
+        .subscribe(res=>{
+          this.projects=res;
+          console.log(res);
+              //http call ends
+    this.loaderService.display(false);
+          // this.profileService.setProjects(res);
+        });
+}
+  ngOnInit() {
+
     
   }
 
