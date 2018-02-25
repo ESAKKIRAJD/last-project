@@ -6,12 +6,20 @@
                             <h4 class="card-title">Edit Profile -
                                 <small class="category">Complete your profile</small>
                             </h4>
-                            <form #profileForm="ngForm" (ngSubmit)='profile(profileForm.value)' method="#" action="#">
+                            <form #profileForm="ngForm" (ngSubmit)='onProfile(profileForm.value)' method="#" action="#">
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="form-group label-floating is-empty">
-                                            <label class="control-label">Company (disabled)</label>
-                                            <input type="text" class="form-control" disabled="">                                           
+                                                <!-- (disabled) -->
+                                            <label class="control-label">Company</label>
+                                            <!-- disabled="" -->
+                                            <input type="text" class="form-control" name="company"  #company="ngModel" required ngModel>
+                                            <div *ngIf="company.errors && (company.touched|| company.dirty)" class="alert text-danger">
+                                                    
+                                                    <div [hidden]="!company.errors.required">
+                                                          Please enter your company name
+                                                    </div>                                                      
+                                            </div>                                           
                                         <span class="material-input"></span></div>
                                     </div>
                                     <div class="col-md-3">
@@ -135,10 +143,16 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>About Me</label>
                                             <div class="form-group label-floating is-empty">
-                                                <label class="control-label"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                                <textarea class="form-control" rows="5"></textarea>
+                                                <label class="control-label"> About Me </label>
+                                                <textarea class="form-control" name="aboutme" #aboutme="ngModel" 
+                                                required ngModel rows="5"></textarea>
+                                                <div *ngIf="aboutme.errors && (aboutme.touched|| aboutme.dirty)" class="alert text-danger">
+                                                        
+                                                        <div [hidden]="!aboutme.errors.required">
+                                                              Please enter comments
+                                                        </div>                                                      
+                                                </div>
                                             <span class="material-input"></span></div>
                                         </div>
                                     </div>
