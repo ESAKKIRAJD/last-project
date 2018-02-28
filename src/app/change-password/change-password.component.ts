@@ -25,7 +25,7 @@ export class ChangePasswordComponent implements OnInit {
 
   public user: User; 
   
-    constructor() { }
+    constructor(private changepasswordService:DataServiceService,private router:Router) { }
   
     ngOnInit() {
          // initialize model here
@@ -40,6 +40,12 @@ export class ChangePasswordComponent implements OnInit {
     onChangepass(value) {
       // call API to save customer
       console.log(value);
+
+      this.changepasswordService.onChangepass(value).subscribe(res=>{
+        console.log(res);
+          this.user=res;
+          this.router.navigate(['/dashboard']);
+        });
   }
 
 }

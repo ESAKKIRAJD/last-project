@@ -14,8 +14,8 @@ export class DataServiceService {
   regUser:any;
   updateDetails:any;
   createdDetails:any;
-   changepassDetails:any;
-   allusers:any; 
+  changepassDetails:any;
+  allusers:any; 
 
   constructor(private http:Http) { }
 
@@ -23,7 +23,7 @@ export class DataServiceService {
 
   onLogin(value){
     // console.log(value);
-    return this.http.post('https://young-mountain-97541.herokuapp.com/findprofile',value)
+    return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/login',value)
     .map(result =>this.loginUser=result.json())
   }
 
@@ -31,7 +31,7 @@ export class DataServiceService {
 
   onForgot(value){
     console.log(value);
-     return this.http.post('https://young-mountain-97541.herokuapp.com/forgotpwd',value)
+     return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/forgotpwd',value)
      .map(result =>this.forgotUser=result.json())
   } 
 
@@ -39,14 +39,14 @@ export class DataServiceService {
 
   onProfile(value){
     console.log(value);
-     return this.http.post('https://young-mountain-97541.herokuapp.com/updateprofile',value)
+     return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/updateprofile',value)
      .map(result =>this.profileUser=result.json())
   }
 
   //  getProjects
   getProjects(){
     
-  return this.http.get('https://young-mountain-97541.herokuapp.com/projectlists')
+  return this.http.get('https://stark-hamlet-39158.herokuapp.com/projects/getprojects')
   .map((dashborddetails:Response)=>dashborddetails.json())
 } 
 
@@ -54,7 +54,7 @@ export class DataServiceService {
 
 addUser(value){ 
   console.log(this.regUser);
-  return this.http.post('https://young-mountain-97541.herokuapp.com/adduser',value)
+  return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/adduser',value)
   .map(result=>this.regUser=result.json())
   
 
@@ -62,21 +62,21 @@ addUser(value){
 // project status  update
 
 onUpdate(value){
-return this.http.post('https://young-mountain-97541.herokuapp.com/projectupdate',value)
+return this.http.post('https://stark-hamlet-39158.herokuapp.com/projects/projectupdate',value)
 .map((updateDetails:Response)=>updateDetails.json())
 }
 
 //add new projects
 
 onNewprojects(value){
-  return this.http.post('https://young-mountain-97541.herokuapp.com/newproject',value)
+  return this.http.post('https://stark-hamlet-39158.herokuapp.com/projects/addproject',value)
   .map((createdDetails:Response)=>createdDetails.json())
    }
 
    // user change password
    
    onChangepass(value){
-  return this.http.post('https://young-mountain-97541.herokuapp.com/changepassword',value)
+  return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/changepwd',value)
   .map((changepassDetails:Response)=>changepassDetails.json())
    }
 
@@ -84,7 +84,7 @@ onNewprojects(value){
   
   getUsers(){
    console.log(this.allusers) 
-  return this.http.get('https://young-mountain-97541.herokuapp.com/getallusers')
+  return this.http.get('https://stark-hamlet-39158.herokuapp.com/users/getusers')
   .map((allusers:Response)=>allusers.json())
 } 
 
