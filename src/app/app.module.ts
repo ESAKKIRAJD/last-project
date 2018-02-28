@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { Router } from '@angular/router';
 
+import { EqualValidator } from './change-password/equal-validator.directive';  // import validator
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -45,7 +47,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     PaymentComponent,
     LandingPageComponent,
     LandingUserpageComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    EqualValidator
   ],
   imports: [
     BrowserModule,

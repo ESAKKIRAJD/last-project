@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { User } from './user.interface';
+
 
 import {DataServiceService} from '../data-service.service';
 
@@ -11,14 +13,33 @@ import {DataServiceService} from '../data-service.service';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  constructor(private changepasswordService:DataServiceService,private router:Router) { }
+  // constructor(private changepasswordService:DataServiceService,private router:Router) { }
 
-  ngOnInit() {
+  // ngOnInit() {
+  // }
+
+  // onChangepass(value){
+  //     console.log(value)
+  //      this.router.navigate(['/landing/dashboard']);
+  //      }
+
+  public user: User; 
+  
+    constructor() { }
+  
+    ngOnInit() {
+         // initialize model here
+         this.user = {
+          // username: '',
+          email: '',
+          password: '',
+          confirmPassword: ''
+      }
+    }
+  
+    onChangepass(value) {
+      // call API to save customer
+      console.log(value);
   }
-
-  onChangepass(value){
-      console.log(value)
-       this.router.navigate(['/landing/dashboard']);
-       }
 
 }
