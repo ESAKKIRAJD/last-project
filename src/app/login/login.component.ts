@@ -27,10 +27,11 @@ export class LoginComponent implements OnInit {
 this.loaderService.display(true);
          this.loginService.onLogin(value).subscribe(res=>{
            this.user=res;
-           console.log(this.user);
-           if(res && res.role=="user"){
+           console.log(this.user[0].role);
+           if(this.user && this.user[0].role=="user"){
+          
             this.router.navigate(['/userlanding']);
-           }else if(res && res.role=="admin"){
+           }else if(this.user && this.user[0].role=="admin"){
             this.router.navigate(['/landing']);
            }
            else{
