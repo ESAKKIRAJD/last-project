@@ -63,13 +63,13 @@
                                             <span class="material-input"></span>
                                         </div>
                                     </div>
-                                    <!-- <div class="input-group">
+                                    <div class="input-group">
                                         <span class="input-group-addon">
                                             <i class="material-icons">account_circle</i>
                                         </span>
                                         <div class="form-group label-floating is-empty">
                                             <label class="control-label">Role</label>
-                                            <input type="text" class="form-control" name="role" minlength="4" maxlength="4" required  ngModel>
+                                            <input type="text" class="form-control" name="role" #role="ngModel" minlength="4" maxlength="4" required  ngModel>
                                             <div *ngIf="role.errors && (role.touched|| role.dirty)" class="alert text-danger">
                                                 <div [hidden]="!role.errors.required">
                                                     required valid role
@@ -78,7 +78,7 @@
                                                       Please enter minimum 4 char
                                                   </div>
                                             </div>                             <span class="material-input"></span></div>
-                                    </div> -->
+                                    </div>
                                 </div>                                   
                                     <div class="row pull">
                                         <div class="col-md-6 col-sm-6">

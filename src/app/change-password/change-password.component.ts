@@ -44,7 +44,12 @@ export class ChangePasswordComponent implements OnInit {
       this.changepasswordService.onChangepass(value).subscribe(res=>{
         console.log(res);
           this.user=res;
-          this.router.navigate(['/dashboard']);
+          if(res && res.role=="user"){
+            this.router.navigate(['/userlanding/dashboard']);
+          }else if(res && res.role=="admin"){
+            this.router.navigate(['/landing/dashboard']);
+          }
+         
         });
   }
 

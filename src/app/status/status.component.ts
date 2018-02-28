@@ -11,7 +11,7 @@ import {DataServiceService} from '../data-service.service';
 })
 export class StatusComponent implements OnInit {
 
-  projects=[];
+  projects:any;
 
   constructor( private statusService:DataServiceService,
     private router:Router) { }
@@ -25,6 +25,7 @@ export class StatusComponent implements OnInit {
 onUpdate(value){
   console.log(value);
   this.statusService.onUpdate(value).subscribe(res=>{
+    this.projects=res
     console.log(res);
     this.router.navigate(['/landing/projects']);
   })
