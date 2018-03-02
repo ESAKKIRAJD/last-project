@@ -17,7 +17,7 @@ import { LoaderService } from '../index'
 })
 export class DashboardComponent implements OnInit {
   projects=[];
-  user=[];
+ 
   
 
   constructor(private loaderService:LoaderService,
