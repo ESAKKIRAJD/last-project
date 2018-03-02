@@ -66,9 +66,9 @@
                                 <label class="col-sm-2 label-on-left">Payment Pending</label>
                                 <div class="col-sm-10">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" value="0" name="payment" #payment="ngModel"  required ngModel readonly >
-                                        <div *ngIf="payment.errors &&(payment.touched || payment.dirty)"  class="alert text-danger">
-                                                <div [hidden]="!payment.errors.required">
+                                        <input type="text" class="form-control" name="paymentpending" #paymentpending="ngModel"  required ngModel  >
+                                        <div *ngIf="paymentpending.errors &&(paymentpending.touched || paymentpending.dirty)"  class="alert text-danger">
+                                                <div [hidden]="!paymentpending.errors.required">
                                                     Please see the pending payment
                                                 </div>
                                             </div>
@@ -76,6 +76,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="row">
                                 <label class="col-sm-2 label-on-left"></label>
                                 <div class="col-sm-10">
@@ -88,7 +89,7 @@
                                                         <h4>Client Payment</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form>
+                                                            <!-- <form method="get" action="/" #paymentsForm="ngForm" (ngSubmit)="onPayment(paymentsForm.value)" class="form-horizontal"> -->
                                                             <div class="form-group label-floating is-empty">
                                                                 <div class="row">                                
                                                                     <label class="col-sm-4 label-on-left">Amount</label>
@@ -124,14 +125,15 @@
                                                             </div>
                                                             <div class="row pull">                                                                   
                                                                 <div class="col-md-6">                                                                   
-                                                                    <a routerLink="landing/payment" class="btn btn-primary btn-simple">CREATE<div class="ripple-container"></div></a>
+                                                                    <!-- <a routerLink="/landing/payment" class="btn btn-primary btn-simple">CREATE<div class="ripple-container"></div></a> -->
+                                                                    <input type="submit" value="CREATE"  class="btn btn-primary" [disabled]="!paymentForm.form.valid"  data-toggle="modal">
                                                                     <!-- <a routerLink="landing/payment" class="btn btn-primary btn-simple"></a> -->
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <a routerLink="landing/payment" class="btn btn-primary btn-simple">CANCEL<div class="ripple-container"></div></a>
+                                                                    <a routerLink="/landing/payment" class="btn btn-primary btn-simple">CANCEL</a>
                                                                 </div>
                                                             </div>
-                                                        </form>
+                                                        <!-- </form> -->
                                                     </div>
                                                 </div>
                                             </div>

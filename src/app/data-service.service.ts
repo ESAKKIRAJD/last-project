@@ -18,6 +18,7 @@ export class DataServiceService {
   createdDetails:any;
   changepassDetails:any;
   allusers:any; 
+  paymentDetails:any;
 
   constructor(private http:Http) { }
 
@@ -92,5 +93,11 @@ onNewprojects(value){
   .map((allusers:Response)=>allusers.json())
 } 
 
+// on Payment
+
+onPayment(value){
+  return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/',value)
+  .map((paymentDetails:Response)=>paymentDetails.json())
+   }
 
 }
