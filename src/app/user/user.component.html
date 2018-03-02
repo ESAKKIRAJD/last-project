@@ -68,8 +68,13 @@
                                             <i class="material-icons">account_circle</i>
                                         </span>
                                         <div class="form-group label-floating is-empty">
-                                            <label class="control-label">Role</label>
-                                            <input type="text" class="form-control" name="role" #role="ngModel" minlength="4" maxlength="4" required  ngModel>
+                                            <!-- <label class="control-label">Role</label> -->
+                                            <!-- <input type="text" class="form-control" name="role" #role="ngModel" minlength="4" maxlength="4" required  ngModel> -->
+                                            <select  class="select form-control" name="role" #role="ngModel" required ngModel>
+                                                    <option value="" disabled>select any one Role</option>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="user">User</option>                                                    
+                                            </select> 
                                             <div *ngIf="role.errors && (role.touched|| role.dirty)" class="alert text-danger">
                                                 <div [hidden]="!role.errors.required">
                                                     required valid role
