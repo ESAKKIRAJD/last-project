@@ -13,9 +13,15 @@ import {DataServiceService} from '../data-service.service';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor(private paymentService:DataServiceService,private router:Router) { }
+  clients=[];
+  constructor(private paymentService:DataServiceService,
+    private router:Router) {}
 
   ngOnInit() {
+    this.paymentService.getPayment().subscribe(res=>{
+           console.log(res);
+           this.clients=res;
+        })
   }
 onPayment(value){
   console.log(value);

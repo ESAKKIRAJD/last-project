@@ -15,9 +15,8 @@
                                         <label class="control-label"></label>
                                         <select class="select form-control" name="client" #client="ngModel" required ngModel>
                                             <option value="" disabled>select client</option>
-                                            <option>client 1</option>
-                                            <option>client 2</option>
-                                            <option>client 3</option>
+                                            <option *ngFor='let client of clients'>{{client.client}}</option>
+                                            
                                         </select>
                                         <div *ngIf="client.errors && (client.touched || client.dirty)" class="alert text-danger">
                                             <div [hidden]="!client.errors.required">
@@ -33,11 +32,10 @@
                                 <div class="col-sm-10">
                                     <div class="form-group label-floating is-empty">
                                         <label class="control-label"></label>
-                                        <select  class="select form-control" name="project" #project="ngModel" required ngModel>
+                                        <select  class="select form-control" name="appname" #project="ngModel" required ngModel>
                                             <option value="" disabled>select client</option>
-                                            <option>project 1</option>
-                                            <option>project 2</option>
-                                            <option>project 3</option>
+                                            <option *ngFor='let client of clients'>{{client.appname}}</option>
+                                            
                                         </select>
                                         <div *ngIf="project.errors && (project.touched || project.dirty)" class="alert text-danger">
                                                 <div [hidden]="!project.errors.required">
