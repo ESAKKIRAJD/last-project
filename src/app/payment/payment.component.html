@@ -45,7 +45,7 @@
                                     <span class="material-input"></span></div>
                                 </div>
                             </div>
-                            <!-- <div class="row">
+                            <div class="row">
                                 <label class="col-sm-2 label-on-left">Total Cost</label>
                                 <div class="col-sm-10">
                                     <div class="form-group label-floating is-empty">
@@ -73,7 +73,7 @@
                                         <span class="material-input"></span>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                             
                             <div class="row">
                                 <label class="col-sm-2 label-on-left"></label>
@@ -86,13 +86,14 @@
                                                         <button class="close" data-dismiss="modal">&times;</button>
                                                         <h4>Client Payment</h4>
                                                     </div>
+                                                    <fieldset ngModelGroup="paidamt">
                                                     <div class="modal-body">
                                                             <!-- <form method="get" action="/" #paymentsForm="ngForm" (ngSubmit)="onPayment(paymentsForm.value)" class="form-horizontal"> -->
                                                             <div class="form-group label-floating is-empty">
                                                                 <div class="row">                                
                                                                     <label class="col-sm-4 label-on-left">Amount</label>
                                                                         <div class="col-sm-8">
-                                                                            <input type="text" class="form-control" name="amount" #amount="ngModel"
+                                                                            <input type="text" class="form-control" name="addpayment" #amount="ngModel"
                                                                             required ngModel>
                                                                             <div *ngIf="amount.errors && (amount.touched|| amount.dirty)" class="alert text-danger">
                                                                                     <div [hidden]="!amount.errors.required">
@@ -133,6 +134,7 @@
                                                             </div>
                                                         <!-- </form> -->
                                                     </div>
+                                                    </fieldset>
                                                 </div>
                                             </div>
                                         </div>
