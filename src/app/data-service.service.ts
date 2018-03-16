@@ -28,7 +28,7 @@ export class DataServiceService {
 
   onLogin(value){
     // console.log(value);
-    return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/login',value)
+    return this.http.post('https://calm-brook-82945.herokuapp.com/users/login',value)
     .map(result =>this.loginUser=result.json())
   }
 
@@ -36,7 +36,7 @@ export class DataServiceService {
 
   onForgot(value){
     console.log(value);
-     return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/forgotpwd',value)
+     return this.http.post('https://calm-brook-82945.herokuapp.com/users/forgotpwd',value)
      .map(result =>this.forgotUser=result.json())
   } 
 
@@ -44,14 +44,14 @@ export class DataServiceService {
 
   onProfile(value){
     console.log(value);
-     return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/updateprofile',value)
+     return this.http.post('https://calm-brook-82945.herokuapp.com/users/updateprofile',value)
      .map(result =>this.profileUser=result.json())
   }
 
   //  getProjects
   getProjects(){
     
-  return this.http.get('https://stark-hamlet-39158.herokuapp.com/projects/getprojects')
+  return this.http.get('https://calm-brook-82945.herokuapp.com/projects/getprojects')
   .map((dashborddetails:Response)=>dashborddetails.json())
 } 
 
@@ -59,7 +59,7 @@ export class DataServiceService {
 
 addUser(value){ 
   console.log(this.regUser);
-  return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/adduser',value)
+  return this.http.post('https://calm-brook-82945.herokuapp.com/users/adduser',value)
   .map(result=>this.regUser=result.json())
   
 
@@ -67,7 +67,7 @@ addUser(value){
 // project status  update
 
 onUpdate(value){
-return this.http.post('https://stark-hamlet-39158.herokuapp.com/projects/projectupdate',value)
+return this.http.post('https://calm-brook-82945.herokuapp.com/projects/projectupdate',value)
 .map((updateDetails:Response)=>updateDetails.json())
 
 }
@@ -75,14 +75,14 @@ return this.http.post('https://stark-hamlet-39158.herokuapp.com/projects/project
 //add new projects
 
 onNewprojects(value){
-  return this.http.post('https://stark-hamlet-39158.herokuapp.com/projects/addproject',value)
+  return this.http.post('https://calm-brook-82945.herokuapp.com/projects/addproject',value)
   .map((createdDetails:Response)=>createdDetails.json())
    }
 
    // user change password
    
    onChangepass(value){
-  return this.http.post('https://stark-hamlet-39158.herokuapp.com/users/changepwd',value)
+  return this.http.post('https://calm-brook-82945.herokuapp.com/users/changepwd',value)
   .map((changepassDetails:Response)=>changepassDetails.json())
    }
 
@@ -90,21 +90,21 @@ onNewprojects(value){
   
   getUsers(){
    console.log(this.allusers) 
-  return this.http.get('https://stark-hamlet-39158.herokuapp.com/users/getusers')
+  return this.http.get('https://calm-brook-82945.herokuapp.com/users/getusers')
   .map((allusers:Response)=>allusers.json())
 } 
 
 // on Payment
 
 onPayment(value){
-  return this.http.post('https://stark-hamlet-39158.herokuapp.com/payments/addpayment',value)
+  return this.http.post('https://calm-brook-82945.herokuapp.com/payments/addpayment',value)
   .map((paymentDetails:Response)=>paymentDetails.json())
    }
 
 //get payment clients and projects
 
 getPayment(){
-  return this.http.get('https://stark-hamlet-39158.herokuapp.com/payments/getclients')
+  return this.http.get('https://calm-brook-82945.herokuapp.com/payments/getclients')
   .map((getClients:Response)=>getClients.json())
 }   
 
