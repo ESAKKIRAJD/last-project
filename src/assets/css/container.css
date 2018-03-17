@@ -42,3 +42,10 @@
 color:#ff0000;
 box-shadow: none;
 }
+
+.row-edit{
+float: left;
+}
+.row-delete{
+	float: left;
+}

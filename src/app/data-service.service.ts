@@ -106,7 +106,24 @@ onPayment(value){
 getPayment(){
   return this.http.get('https://calm-brook-82945.herokuapp.com/payments/getclients')
   .map((getClients:Response)=>getClients.json())
-}   
+} 
+
+
+// on Edit app
+
+onEdit(value){
+  return this.http.post('https://calm-brook-82945.herokuapp.com/',value)
+  .map((appStatus:Response)=>appStatus.json())
+   }
+
+// on Delete  App
+
+onClose(value){
+  return this.http.post('https://calm-brook-82945.herokuapp.com/',value)
+  .map((appDetails:Response)=>appDetails.json())
+   }
+
+
 
 }
 

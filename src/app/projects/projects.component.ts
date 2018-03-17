@@ -4,7 +4,9 @@ import {ShareService} from '../share.service';
 
 import {DataServiceService} from '../data-service.service';
 
-import { LoaderService } from '../index'
+import { LoaderService } from '../index';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -15,7 +17,8 @@ export class ProjectsComponent implements OnInit {
   projects=[];
 
   constructor( private loaderService:LoaderService,
-   public projectService:DataServiceService) { 
+   public projectService:DataServiceService,
+   private router:Router) { 
      this.Init();
   }
   Init(){
@@ -34,6 +37,25 @@ this.loaderService.display(false);
 
 
 }
+
+
+onEdit(value){
+  console.log(value);
+  this.projectService.onEdit(value).subscribe(res=>{
+    console.log(res);
+   this.router.navigate(['/landing/project']);
+})
+}
+
+onClose(value){
+  console.log(value);
+  this.projectService.onClose(value).subscribe(res=>{
+    console.log(res);
+   this.router.navigate(['/landing/project']);
+})
+
+}
+
 }
 
 
