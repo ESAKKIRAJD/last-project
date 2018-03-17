@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 
 import {DataServiceService} from '../data-service.service';
 
+import { LoaderService } from '../index'
+
+
 
 @Component({
   selector: 'app-payment',
@@ -16,9 +19,11 @@ export class PaymentComponent implements OnInit {
   clients=[];
   datum = [];
   constructor(private paymentService:DataServiceService,
-    private router:Router) {}
+    private router:Router,private loaderService:LoaderService) {}
 
   ngOnInit() {
+               //http call starts
+this.loaderService.display(true);
     this.paymentService.getPayment().subscribe(res=>{
            console.log(res);
            this.clients=res;
@@ -43,13 +48,22 @@ export class PaymentComponent implements OnInit {
            }
            console.log(this.datum);
         })
+            //http call ends
+            this.loaderService.display(false);
+  }
+  datadismiss(){
+    this.router.navigate(['/landing/payment']);
   }
 onPayment(value){
+                 //http call starts
+this.loaderService.display(true);
   console.log(value);
  this.paymentService.onPayment(value).subscribe(res=>{
-       console.log(res);
-      this.router.navigate(['/landing/payment']);
+       console.log(res); 
+       this.datadismiss();
+      
      })
-
+            //http call ends
+  this.loaderService.display(false);
 }
 }
