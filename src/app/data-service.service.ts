@@ -126,6 +126,13 @@ onClose(value){
    }
 
 
+   // pending amt cal culation
+   onPending(value){
+    return this.http.post('https://calm-brook-82945.herokuapp.com/payments/findProject',value)
+    .map((paymentObject:Response)=>paymentObject.json())
+     }
+
+
 
 }
 

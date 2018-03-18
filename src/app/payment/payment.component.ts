@@ -15,9 +15,11 @@ import { LoaderService } from '../index'
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-
+  pendingAmt:any;
+  client: any;
   clients=[];
   datum = [];
+  proamt:any;
   constructor(private paymentService:DataServiceService,
     private router:Router,private loaderService:LoaderService) {}
 
@@ -28,6 +30,7 @@ this.loaderService.display(true);
            console.log(res);
            this.clients=res;
            for(let i=0; i<this.clients.length; i++){
+             console.log(this.clients[i]);
              for(let j=0;j<this.clients[i].addpayment.length;j++){
                var data=this.clients[i].addpayment[j];
               let obj={
@@ -51,19 +54,36 @@ this.loaderService.display(true);
             //http call ends
             this.loaderService.display(false);
   }
-  datadismiss(){
-    this.router.navigate(['/landing/payment']);
-  }
+
 onPayment(value){
                  //http call starts
 this.loaderService.display(true);
-  console.log(value);
  this.paymentService.onPayment(value).subscribe(res=>{
-       console.log(res); 
-       this.datadismiss();
-      
+       
      })
             //http call ends
   this.loaderService.display(false);
 }
+
+
+//pending amt calculating
+onPending(value){
+console.log(value);
+this.proamt=value;
+var totalamt=parseInt(this.proamt.cost)
+console.log(totalamt);
+this.paymentService.onPending(value).subscribe(res=>{
+  console.log(res);
+  this.client=res;
+       var paidamt = 0;
+       for(let k=0;k<this.client.addpayment.length;k++){
+        paidamt += parseInt(this.client.addpayment[k].amount)
+       }
+       var pendingAmt=totalamt-paidamt;
+       this.pendingAmt=pendingAmt;
+       console.log(paidamt);
+       console.log(pendingAmt);
+})
+}
+
 }

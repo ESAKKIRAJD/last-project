@@ -64,7 +64,7 @@
                                 <label class="col-sm-2 label-on-left">Payment Pending</label>
                                 <div class="col-sm-10">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="paymentpending" readonly>
+                                        <input type="text" [(ngModel)]="pendingAmt" (focus)="onPending(paymentForm.value)" class="form-control" name="paymentpending" readonly>
                                         <!-- <div *ngIf="paymentpending.errors &&(paymentpending.touched || paymentpending.dirty)"  class="alert text-danger">
                                                 <div [hidden]="!paymentpending.errors.required">
                                                     Please see the pending payment
