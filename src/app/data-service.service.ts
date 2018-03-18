@@ -20,6 +20,8 @@ export class DataServiceService {
   allusers:any; 
   paymentDetails:any;
   getClients:any;
+  appStatus:any;
+  appDetails:any;
 
   constructor(private http:Http) { }
 
@@ -119,7 +121,7 @@ onEdit(value){
 // on Delete  App
 
 onClose(value){
-  return this.http.post('https://calm-brook-82945.herokuapp.com/',value)
+  return this.http.post('https://calm-brook-82945.herokuapp.com/projects/deleteproject',value)
   .map((appDetails:Response)=>appDetails.json())
    }
 
